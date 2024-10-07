@@ -13,11 +13,12 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                script {
-                    scannerHome = tool 'SonarQube Scanner'
-                    withSonarQubeEnv('SonarQube') {
-                        sh "${scannerHome}/bin/sonar-scanner"
-                    }
+                 withSonarQubeEnv('SonarQube') {
+                    sh 'sonar-scanner \
+                    -Dsonar.projectKey=Jenkins \
+                    -Dsonar.sources=. \
+                    -Dsonar.host.url=http://192.168.91.130:9000 \
+                    -Dsonar.login=sqp_d3a3fea6f0415c89e4e45fcecad5fa36a1e02582'
                 }
             }
         }
