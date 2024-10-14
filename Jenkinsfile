@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                echo 'Building Docker Image Hola que tal buen dia BIEEEEN CHETO MAL ESTOY LLENO DE MARIAN. AVENIIIDAAA'
+                echo 'Building Docker Image 123...'
             }
         }
         stage('Docker Push') {
@@ -36,5 +36,6 @@ pipeline {
             }
         }
     }
+    // Pruebas...
 }
 
