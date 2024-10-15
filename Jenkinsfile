@@ -35,11 +35,15 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo 'Building Docker Image'
+                dir('/home/admin/RepoTP') {  // Ruta donde clonaste el repositorio en la VM1
+                    sh 'docker build -t mateobonanata/appx-api:latest .'
+                }
             }
         }
         stage('Docker Push') {
             steps {
                 echo 'Pushing Docker Image'
+                sh 'docker push mateobonanata/appx-api:latest'
             }
         }
         stage('Restart Deployment') {
