@@ -37,23 +37,3 @@ app.post('/books', async (req, res) => {
 app.listen(8080, () => {
   console.log('API escuchando en el puerto 8080');
 });
-
-const express = require('express');
-//const app = express();
-const port = 8080;  // Cambia el puerto si lo necesitas
-
-app.get('/', (req, res) => {
-  res.send(`
-    <html>
-      <head><title>Texto en el Navegador</title></head>
-      <body>
-        <h1>¡Hola desde localhost!</h1>
-        <p>Este texto es servido desde un servidor Node.js en localhost.</p>
-      </body>
-    </html>
-  `);
-});
-
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
-});
