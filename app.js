@@ -13,7 +13,7 @@ mongoose.connect('mongodb://10.10.10.182:27017/appx-db', {
 .catch(err => console.error('No se pudo conectar a MongoDB', err));
 
 // Definir un esquema y un modelo de ejemplo
-const BookSchema = new mongoose.Schema({|
+const BookSchema = new mongoose.Schema({
   title: String,
   author: String
 });
@@ -36,24 +36,4 @@ app.post('/books', async (req, res) => {
 // Iniciar servidor
 app.listen(8080, () => {
   console.log('API escuchando en el puerto 8080');
-});
-
-const express = require('express');
-const app = express();
-const port = 3000;  // Cambia el puerto si lo necesitas
-
-app.get('/', (req, res) => {
-  res.send(`
-    <html>
-      <head><title>Texto en el Navegador</title></head>
-      <body>
-        <h1>¡Hola desde localhost!</h1>
-        <p>Este texto es servido desde un servidor Node.js en localhost.</p>
-      </body>
-    </html>
-  `);
-});
-
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
 });
