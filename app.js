@@ -38,21 +38,22 @@ app.listen(8080, () => {
   console.log('API escuchando en el puerto 8080');
 });
 
-const url = 'http://localhost:8081/punto'; // Reemplaza el puerto y el endpoint
-const data = {
-  key1: 'value1',
-  key2: 'value2'
-};
+const express = require('express');
+const app = express();
+const port = 3000;  // Cambia el puerto si lo necesitas
 
-fetch(url, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(data)
-})
-.then(response => response.json())
-.then(data => console.log('Success:', data))
-.catch((error) => {
-  console.error('Error:', error);
+app.get('/', (req, res) => {
+  res.send(`
+    <html>
+      <head><title>Texto en el Navegador</title></head>
+      <body>
+        <h1>¡Hola desde localhost!</h1>
+        <p>Este texto es servido desde un servidor Node.js en localhost.</p>
+      </body>
+    </html>
+  `);
+});
+
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
 });
