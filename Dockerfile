@@ -1,5 +1,5 @@
 # Usar una imagen de Node.js como base
-FROM node:14
+FROM node:18
 
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /usr/src/app
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Exponer el puerto que usará la aplicación (8080 en este caso)
-EXPOSE 8080
+EXPOSE 8081
 
 # Comando para correr la aplicacion
 CMD ["node", "app.js"]
