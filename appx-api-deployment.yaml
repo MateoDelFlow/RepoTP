@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appx-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: appx-api
+  template:
+    metadata:
+      labels:
+        app: appx-api
+    spec:
+      containers:
+      - name: appx-api
+        image: appx-api:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: appx-api-service
+spec:
+  selector:
+    app: appx-api
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
