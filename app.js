@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 // Conexión a MongoDB
-mongoose.connect('mongodb://10.10.10.182:27017/appx-db', {
+mongoose.connect('mongodb://localhost:27017/appx-db', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
