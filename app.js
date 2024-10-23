@@ -5,10 +5,11 @@ const app = express();
 app.use(express.json());
 
 // Conexión a MongoDB
-mongoose.connect('mongodb://mongo:27017/libros', {
+mongoose.connect('mongodb://192.168.91.131:27017/libros', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
 
 
 // Definir un esquema y un modelo de ejemplo
