@@ -6,9 +6,10 @@ app.use(express.json());
 
 // Conexión a MongoDB
 mongoose.connect('mongodb://mongo:27017/libros', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
+
 
 // Definir un esquema y un modelo de ejemplo
 const BookSchema = new mongoose.Schema({
