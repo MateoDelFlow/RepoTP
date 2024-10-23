@@ -5,12 +5,10 @@ const app = express();
 app.use(express.json());
 
 // Conexión a MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/nombre-de-tu-db', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('Conectado a MongoDB'))
-.catch(err => console.error('No se pudo conectar a MongoDB', err));
+mongoose.connect('mongodb://mongo:27017/libros', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 // Definir un esquema y un modelo de ejemplo
 const BookSchema = new mongoose.Schema({
