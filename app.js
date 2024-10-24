@@ -33,7 +33,7 @@ app.post('/books', async (req, res) => {
   res.json(newBook);
 });
 
-// Iniciar servidor
+// Iniciar servidor v2
 app.listen(8080, () => {
   console.log('API escuchando en el puerto 8080');
 });
