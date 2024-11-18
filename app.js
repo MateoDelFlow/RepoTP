@@ -10,9 +10,6 @@ mongoose.connect('mongodb://192.168.91.131:27017/libros', {
   useUnifiedTopology: true,
 });
 
-
-
-// Definir un esquema y un modelo de ejemplo
 const BookSchema = new mongoose.Schema({
   title: String,
   author: String
@@ -33,7 +30,9 @@ app.post('/books', async (req, res) => {
   res.json(newBook);
 });
 
-// Iniciar servidor v3
+// Iniciar servidor
 app.listen(8080, () => {
   console.log('API escuchando en el puerto 8080');
 });
+
+//Probando el pipeline
